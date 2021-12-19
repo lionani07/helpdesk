@@ -1,15 +1,16 @@
 package helpdesk.model
 
+import helpdesk.model.enums.Perfil
 import java.time.LocalDate
 
-open class Pessoa(
-    val id: Long,
-    val nome: String,
-    val cpf: String,
-    val email: String,
-    val senha: String,
-    private val dataCriacao: LocalDate = LocalDate.now(),
-    private val perfis: Set<Perfil> = emptySet()
+abstract class Pessoa(
+    open val id: Long,
+    open val nome: String,
+    open val cpf: String,
+    open val email: String,
+    open val senha: String,
+    open val dataCriacao: LocalDate = LocalDate.now(),
+    open val perfis: Set<Perfil> = emptySet()
 ){
     init {
         addPerfil(Perfil.CLIENTE)
