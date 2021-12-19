@@ -1,6 +1,6 @@
 package helpdesk.model
 
-import helpdesk.model.enums.Perfil
+import helpdesk.model.enums.PessoaPerfil
 import java.time.LocalDate
 
 abstract class Pessoa(
@@ -10,13 +10,9 @@ abstract class Pessoa(
     open val email: String,
     open val senha: String,
     open val dataCriacao: LocalDate = LocalDate.now(),
-    open val perfis: Set<Perfil> = emptySet()
+    open val perfis: MutableSet<PessoaPerfil> = mutableSetOf()
 ){
-    init {
-        addPerfil(Perfil.CLIENTE)
-    }
-
-    fun addPerfil(perfil: Perfil) {
-        this.perfis.plus(perfil)
+    fun addPerfil(perfil: PessoaPerfil) {
+        perfis.add(perfil)
     }
 }
