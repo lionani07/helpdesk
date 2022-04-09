@@ -10,6 +10,6 @@ class HomeController {
 
     @GetMapping
     fun home(): String {
-        return "Hello Word"
+        return "App is Up"
     }
 }

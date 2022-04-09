@@ -10,8 +10,8 @@ class Tecnico(
     senha: String,
     val chamados: List<Chamado> = arrayListOf()
 ) : Pessoa(id, nome, cpf, email, senha) {
-
     init {
+        print("Iniciando init...")
         addPerfil(PessoaPerfil.TECNICO)
     }
 }
