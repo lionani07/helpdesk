@@ -6,7 +6,7 @@ import javax.persistence.OneToMany
 
 @Entity
 class Tecnico(
-    id: Long,
+    id: Long?,
     nome: String,
     cpf: String,
     email: String,

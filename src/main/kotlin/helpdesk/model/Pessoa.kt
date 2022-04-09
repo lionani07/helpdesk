@@ -8,7 +8,7 @@ import javax.persistence.*
 abstract class Pessoa(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    open val id: Long,
+    open val id: Long?,
     open val nome: String,
     open val cpf: String,
     open val email: String,
@@ -17,6 +17,7 @@ abstract class Pessoa(
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "PERFIS")
+    @Enumerated(EnumType.STRING)
     open val perfis: MutableSet<PessoaPerfil> = mutableSetOf()
 ){
     fun addPerfil(perfil: PessoaPerfil) {
