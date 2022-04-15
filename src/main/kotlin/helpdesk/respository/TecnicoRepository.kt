@@ -1,7 +1,7 @@
 package helpdesk.respository
 
-import helpdesk.model.Pessoa
+import helpdesk.model.Tecnico
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface PessoaRepository: JpaRepository<Pessoa, Long> {
+interface TecnicoRepository: JpaRepository<Tecnico, Long> {
 }
